@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 // import { ZoneContainer } from './components/styled-components/ZoneContainer'
 // import Player from './components/player'
 import TilePalette from './components/tile-palette'
+import Map from './components/map'
 
 import useDraggable from './hooks/use-draggable'
 
@@ -48,6 +49,15 @@ function App() {
       <TilePalette 
         position={position}
         tileset={tileset}
+        size={{
+          height: 288,
+          width: 640
+        }}
+      />
+    
+      <Map 
+        tiles={tiles} 
+        tileset={tileset} 
         size={{
           height: 288,
           width: 640
