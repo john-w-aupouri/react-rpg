@@ -1,7 +1,6 @@
 import React from 'react'
 import Sprite from '../sprite'
 
-
 const Actor = ({ 
   sprite, 
   data, 

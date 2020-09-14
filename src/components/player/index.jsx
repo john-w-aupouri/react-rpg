@@ -1,5 +1,6 @@
 import React from 'react'
 import Actor from '../actor'
+
 import useKeyPress from '../../hooks/use-key-press'
 import useWalk from '../../hooks/use-walk'
 
@@ -10,7 +11,6 @@ const Player = ({ skin }) => {
     w: 32
   }
   
-
   useKeyPress(e => {
     // get direction of keypress
     walk(e.key.replace("Arrow", "").toLowerCase())
