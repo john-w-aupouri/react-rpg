@@ -1,11 +1,12 @@
 import React from 'react'
-import './App.css'
+import { ZoneContainer } from './components/styled-components/ZoneContainer'
+import Player from './components/player'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
+    <ZoneContainer>
+      <Player skin="m1" />
+    </ZoneContainer>
   )
 }
 
