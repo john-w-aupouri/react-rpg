@@ -5,7 +5,8 @@ const Map = ({
   tileset, 
   size,
   activeTile,
-  setTiles
+  setTiles,
+  bgTile
 }) => {
 
   function cloneMatrix(m) {
@@ -35,27 +36,51 @@ const Map = ({
       width: size.width,
     }}
   >
-    {
-      tiles.map((row, y) => 
+    <div style={{ position: "absolute", zIndex: 1 }}>
+      {tiles.map((row, y) => 
         <div style={{display: "flex"}}>
-        {
-          row.map((tile, x) =>
-            <div
-              onClick={() => dropTile({ x, y })}
-              style={{
-                borderTop: "1px solid black",
-                borderRight: "1px solid black",
-                background: `url(/sprites/${tileset}.png) -${
-                  tile.v.x
-                }px -${tile.v.y}px no-repeat`,
-                width: 32,
-                height: 32
-              }}
-            />
-          )
-        }
-      </div>
-    )}
+          {
+            row.map((tile, x) =>
+              <div
+                onClick={() => dropTile({ x, y })}
+                style={{
+                  borderTop: "1px solid black",
+                  borderRight: "1px solid black",
+                  background: `url(/sprites/${tileset}.png) -${
+                    bgTile.x
+                  }px -${bgTile.y}px no-repeat`,
+                  width: 32,
+                  height: 32
+                }}
+              />
+            )
+          }
+        </div>
+      )}
+    </div>
+
+    <div style={{ position: "absolute", zIndex: 2}}>
+      {tiles.map((row, y) => 
+        <div style={{display: "flex"}}>
+          {
+            row.map((tile, x) =>
+              <div
+                onClick={() => dropTile({ x, y })}
+                style={{
+                  borderTop: "1px solid black",
+                  borderRight: "1px solid black",
+                  background: `url(/sprites/${tileset}.png) -${
+                    tile.v.x
+                  }px -${tile.v.y}px no-repeat`,
+                  width: 32,
+                  height: 32
+                }}
+              />
+            )
+          }
+        </div>
+      )}
+    </div>
   </div>
 }
 

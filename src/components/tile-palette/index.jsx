@@ -7,7 +7,8 @@ const TilePalette = ({
   setTileSet,
   position, 
   activeTile, 
-  setActiveTile 
+  setActiveTile,
+  setBgTile
 }) => {
   const tilesetData = require("../../data/tilesets.json")
   const tilesets = Object.keys(tilesetData).map(set => ({
@@ -65,6 +66,16 @@ const TilePalette = ({
             onChange={(tileset) => setTileSet(tileset.value)}
             value={tileset}
           />
+        </div>
+
+        <div style={{ width: 200, marginLeft: 8 }}>
+          <button
+            onClick={() => setBgTile(activeTile)}
+            style={{
+              padding: "6px 20px",
+              fontSize: 10
+            }}
+          >Fill Background</button>
         </div>
       </div>
         
