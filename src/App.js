@@ -51,12 +51,9 @@ function App() {
       <TilePalette 
         position={position}
         tileset={tileset}
+        setTileSet={setTileSet}
         activeTile={activeTile}
         setActiveTile={setActiveTile}
-        size={{
-          height: 288,
-          width: 640
-        }}
       />
     
       <Map 

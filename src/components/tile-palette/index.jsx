@@ -3,7 +3,6 @@ import React from 'react'
 const TilePalette = ({ 
   tileset, 
   position, 
-  size, 
   activeTile, 
   setActiveTile 
 }) => {
