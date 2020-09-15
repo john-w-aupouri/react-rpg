@@ -2,6 +2,10 @@ import React from 'react'
 import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css'
 
+import { SelectedTileContainer } from '../styled-components/SelectedTileContainer'
+import { DropdownContainer } from '../styled-components/DropdownContainer'
+import { BgButtonContainer } from '../styled-components/BgButtonContainer'
+
 const TilePalette = ({ 
   tileset, 
   setTileSet,
@@ -46,9 +50,10 @@ const TilePalette = ({
         backgroundColor: "white"
       }}
     >
+      
       <div style={{display: "flex", margin: 4 }}>
         <img id="handle" src="/img/drag-handle.png" alt="" style={{cursor: "grabbing"}} />
-        <div style={{ position: "relative", width: 32, marginLeft: 8 }}>
+        <SelectedTileContainer>
           <div
             style={{
               background: `url(/sprites/${tileset}.png) -${
@@ -58,17 +63,17 @@ const TilePalette = ({
               height: 32
             }}
           />
-        </div>
+        </SelectedTileContainer>
 
-        <div style={{ width: 200, marginLeft: 8 }}>
+        <DropdownContainer>
           <Dropdown
             options={tilesets}
             onChange={(tileset) => setTileSet(tileset.value)}
             value={tileset}
           />
-        </div>
+        </DropdownContainer>
 
-        <div style={{ width: 200, marginLeft: 8 }}>
+        <BgButtonContainer>
           <button
             onClick={() => setBgTile(activeTile)}
             style={{
@@ -76,7 +81,7 @@ const TilePalette = ({
               fontSize: 10
             }}
           >Fill Background</button>
-        </div>
+        </BgButtonContainer>
       </div>
         
       {tiles.map((row, y) => (
