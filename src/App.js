@@ -8,6 +8,7 @@ import useDraggable from './hooks/use-draggable'
 
 function App() {
   const [tileset, setTileSet] = useState("rpg-nature-tileset/spring")
+  const [activeTile, setActiveTile] = useState({x: 1 * 32, y: 4 * 32})
   const [tiles, setTiles] = useState([])
   const [mapSize, setMapSize] = useState({
     width: 800,
@@ -20,6 +21,7 @@ function App() {
     const _tiles = []
     let id = 0
 
+    // create tile matrix
     for (let y = 0; y < mapSize.height; y = y + 32) {
       const row = []
       for (let x = 0; x < mapSize.width; x = x + 32) {
@@ -49,6 +51,8 @@ function App() {
       <TilePalette 
         position={position}
         tileset={tileset}
+        activeTile={activeTile}
+        setActiveTile={setActiveTile}
         size={{
           height: 288,
           width: 640
@@ -58,10 +62,9 @@ function App() {
       <Map 
         tiles={tiles} 
         tileset={tileset} 
-        size={{
-          height: 288,
-          width: 640
-        }}
+        size={mapSize}
+        activeTile={activeTile}
+        setTiles={setTiles}
       />
     </div>
     // <ZoneContainer>
