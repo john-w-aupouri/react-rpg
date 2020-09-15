@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
-// import { ZoneContainer } from './components/styled-components/ZoneContainer'
-// import Player from './components/player'
+// import { ZoneContainer } from './components/styled-components'
+import Player from './components/player'
 import TilePalette from './components/tile-palette'
 import Map from './components/map'
 
-// custom hooks
 import useDraggable from './hooks/use-draggable'
 
 function App() {
@@ -58,7 +57,11 @@ function App() {
         setActiveTile={setActiveTile}
         setBgTile={setBgTile}
       />
-    
+      
+      {/* <ZoneContainer> */}
+        <Player skin="m1" />
+      {/* </ZoneContainer> */}
+
       <Map 
         tiles={tiles} 
         tileset={tileset} 
@@ -68,9 +71,7 @@ function App() {
         bgTile={bgTile}
       />
     </div>
-    // <ZoneContainer>
-    //   <Player skin="m1" />
-    // </ZoneContainer>
+    
   )
 }
 

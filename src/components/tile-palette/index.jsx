@@ -2,9 +2,7 @@ import React from 'react'
 import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css'
 
-import { SelectedTileContainer } from '../styled-components/SelectedTileContainer'
-import { DropdownContainer } from '../styled-components/DropdownContainer'
-import { BgButtonContainer } from '../styled-components/BgButtonContainer'
+import { SelectedTileContainer, DropdownContainer, BgButtonContainer } from '../styled-components'
 
 const TilePalette = ({ 
   tileset, 
