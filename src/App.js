@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-// import { ZoneContainer } from './components/styled-components'
+import { WorldContainer } from './components/styled-components'
 import Player from './components/player'
 import TilePalette from './components/tile-palette'
 import Map from './components/map'
@@ -39,39 +39,40 @@ function App() {
   }, [])
 
   return (
-    <div
-      style={{
-        position: "relative",
-        width: window.innerWidth,
-        height: window.innerHeight,
-        backgroundColor: "grey",
-        overflow: "hidden",
-        border: "1px solid black"
-      }}
-    >
-      <TilePalette 
-        position={position}
-        tileset={tileset}
-        setTileSet={setTileSet}
-        activeTile={activeTile}
-        setActiveTile={setActiveTile}
-        setBgTile={setBgTile}
-      />
-      
-      {/* <ZoneContainer> */}
-        <Player skin="m1" />
-      {/* </ZoneContainer> */}
+    <WorldContainer>
+      <div
+        style={{
+          position: "relative",
+          width: window.innerWidth,
+          height: window.innerHeight,
+          backgroundColor: "grey",
+          overflow: "hidden",
+          border: "1px solid black"
+        }}
+      >
+        <TilePalette 
+          position={position}
+          tileset={tileset}
+          setTileSet={setTileSet}
+          activeTile={activeTile}
+          setActiveTile={setActiveTile}
+          setBgTile={setBgTile}
+        />
+        
 
-      <Map 
-        tiles={tiles} 
-        tileset={tileset} 
-        size={mapSize}
-        activeTile={activeTile}
-        setTiles={setTiles}
-        bgTile={bgTile}
-      />
-    </div>
-    
+          <Player skin="m1" />
+      
+
+        <Map 
+          tiles={tiles} 
+          tileset={tileset} 
+          size={mapSize}
+          activeTile={activeTile}
+          setTiles={setTiles}
+          bgTile={bgTile}
+        />
+      </div>
+    </WorldContainer>
   )
 }
 

@@ -16,7 +16,7 @@ export const SelectedTileContainer = styled.div`
   margin-left: 8px;
 `
 
-export const ZoneContainer = styled.div`
+export const WorldContainer = styled.div`
   box-sizing: border-box;
   border: 4px solid black;
   margin: 0.5rem auto;
