@@ -58,11 +58,7 @@ function App() {
           setActiveTile={setActiveTile}
           setBgTile={setBgTile}
         />
-        
-
           <Player skin="m1" />
-      
-
         <Map 
           tiles={tiles} 
           tileset={tileset} 
